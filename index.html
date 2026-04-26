@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amche Ambe by Bhalu 🐻🥭</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fffdf6;
+color:#333;
+}
+
+section{
+padding:80px 8%;
+}
+
+h1,h2,h3{
+font-weight:700;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#ff9800;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+margin-top:20px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#e68900;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),
+url('https://images.unsplash.com/photo-1553279768-865429fa0078');
+background-size:cover;
+color:white;
+}
+
+.hero h1{
+font-size:3.5rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.3rem;
+}
+
+/* BHALU */
+
+.bhalu{
+display:flex;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.bhalu img{
+width:280px;
+}
+
+.bhalu-text{
+max-width:500px;
+}
+
+/* FEATURES */
+
+.features{
+background:#fff3e0;
+text-align:center;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.feature{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* PRODUCTS */
+
+.products{
+text-align:center;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.price{
+font-size:1.5rem;
+color:#ff9800;
+font-weight:700;
+margin:10px 0;
+}
+
+/* APPROVED BADGE */
+
+.approved{
+text-align:center;
+background:#e8f5e9;
+}
+
+.approved img{
+width:200px;
+margin-top:20px;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+background:#ff9800;
+color:white;
+}
+
+.cta .btn{
+background:white;
+color:#ff9800;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#2d5016;
+color:white;
+}
+
+.main-logo{
+width:420px;
+max-width:90%;
+margin-bottom:20px;
+}
+ 
+.order-section{
+background:#f8efe3;
+padding:80px 8%;
+max-width:700px;
+margin:auto;
+border-radius:20px;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.qty-box{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-top:10px;
+}
+
+.qty-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
+
+.qty-controls{
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.qty-controls button{
+width:30px;
+height:30px;
+border:none;
+background:#ff9800;
+color:white;
+border-radius:50%;
+cursor:pointer;
+}
+
+.qty-controls input{
+width:50px;
+text-align:center;
+}
+
+.grand-total{
+margin-top:15px;
+background:#ff8c42;
+padding:10px;
+color:white;
+border-radius:8px;
+font-weight:bold;
+}
+
+.upi-box{
+display:flex;
+gap:20px;
+align-items:center;
+background:white;
+padding:15px;
+border-radius:10px;
+margin:20px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="logo.png" class="main-logo">
+
+<h2>Ratnagiri Hapus Mangoes</h2>
+
+<p>Fresh from our farms to your home!</p>
+
+<a href="#products" class="btn">Order Fresh Mangoes</a>
+
+</div>
+
+</section>
+
+<!-- BHALU -->
+
+<section id="bhalu">
+
+<div class="bhalu">
+
+<img src="bhalu.png">
+
+<div class="bhalu-text">
+
+<h2>Meet Bhalu 🐻</h2>
+
+<p>
+
+Bhalu is our official mango tester.
+
+Every mango goes through the **Bhalu Approval Test**.
+
+If Bhalu doesn't like it — we don't ship it.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<h2>Why Our Mangoes?</h2>
+
+<div class="feature-grid">
+
+<div class="feature">
+🌿 <h3>Organically Grown</h3>
+<p>No chemicals used.</p>
+</div>
+
+<div class="feature">
+👑 <h3>Royal Taste</h3>
+<p>Authentic Ratnagiri Haapus.</p>
+</div>
+
+<div class="feature">
+🥭 <h3>Handpicked</h3>
+<p>Selected at perfect ripeness.</p>
+</div>
+
+<div class="feature">
+🍯 <h3>Naturally Sweet</h3>
+<p>Rich aroma and flavour.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- APPROVED BY BHALU -->
+
+<section class="approved">
+
+<h2>Certified Quality</h2>
+
+<p>Every mango passes the Bhalu test.</p>
+
+<img src="approved.png">
+
+</section>
+
+<!-- CTA -->
+
+<section id="order" class="order-section">
+
+<h2>Place Your Mango Order 🥭</h2>
+
+<form id="orderForm">
+
+<div class="form-group">
+<label>Name *</label>
+<input type="text" id="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" id="phone" required>
+</div>
+
+<div class="form-group">
+<label>Delivery Address *</label>
+<textarea id="address" rows="3" required></textarea>
+</div>
+
+<h3>🥭 Select Quantities (in dozens)</h3>
+
+<div class="qty-row">
+<span>Alphonso ₹1269/doz</span>
+
+<div class="qty-controls">
+<button type="button" onclick="decreaseQty()">-</button>
+<input type="number" id="alphonso-qty" value="0" readonly>
+<button type="button" onclick="increaseQty()">+</button>
+</div>
+ 
+<span id="alphonso-total">₹0</span>
+
+</div>
+
+<div class="grand-total">
+Grand Total: <span id="grand-total">₹0</span>
+</div>
+
+<h3>💳 Pay via UPI</h3>
+
+<div class="upi-box">
+
+<img src="qr-payment.png" width="120">
+
+<div>
+<p><b>UPI ID:</b> guptarohit000@okicici</p>
+<p><b>Phone:</b> +91 97665 51100</p>
+<p>Scan & pay then submit order.</p>
+</div>
+
+</div>
+
+<button type="submit" class="btn">Submit Order via WhatsApp</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>🐻 Approved by Bhalu</p>
+
+<p>© 2026 Amche Ambe</p>
+
+</footer>
+
+<script>
+
+const PRICE_PER_DOZEN = 1269;
+
+const qtyInput = document.getElementById("alphonso-qty");
+const subtotalEl = document.getElementById("alphonso-total");
+const grandTotalEl = document.getElementById("grand-total");
+
+function updateTotal() {
+
+const qty = parseInt(qtyInput.value) || 0;
+const total = qty * PRICE_PER_DOZEN;
+
+subtotalEl.textContent = "₹" + total;
+grandTotalEl.textContent = "₹" + total;
+
+}
+
+function increaseQty() {
+
+qtyInput.value = parseInt(qtyInput.value || 0) + 1;
+updateTotal();
+
+}
+
+function decreaseQty() {
+
+let current = parseInt(qtyInput.value || 0);
+
+if(current > 0){
+qtyInput.value = current - 1;
+}
+
+updateTotal();
+
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name = document.getElementById("name").value.trim();
+const phone = document.getElementById("phone").value.trim();
+const address = document.getElementById("address").value.trim();
+const qty = parseInt(qtyInput.value) || 0;
+
+if(qty === 0){
+alert("Please select at least 1 dozen mangoes.");
+return;
+}
+
+const total = qty * PRICE_PER_DOZEN;
+
+const message = `Hi, I want to order Amche Ambe by Bhalu 🥭
+
+Name: ${name}
+Phone: ${phone}
+Address: ${address}
+
+Order:
+Alphonso: ${qty} dozen
+
+Total: ₹${total}
+
+Payment done via UPI`;
+
+const whatsappURL = `https://wa.me/8421559339?text=${encodeURIComponent(message)}`;
+
+window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
