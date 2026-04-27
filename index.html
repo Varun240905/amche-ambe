@@ -260,7 +260,42 @@ margin:15px 0;
 font-size:16px;
 color:#d35400;
 }
+.upi-buttons{
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:15px;
+flex-wrap:wrap;
+}
 
+.gpay-btn{
+background:#34A853;
+color:white;
+padding:10px 16px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+cursor:pointer;
+}
+
+.phonepe-btn{
+background:#5F259F;
+color:white;
+padding:10px 16px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+cursor:pointer;
+}
+
+.gpay-btn:hover{
+background:#2b8c44;
+}
+
+.phonepe-btn:hover{
+background:#4c1d82;
+}
+ 
 </style>
 
 </head>
@@ -395,7 +430,7 @@ If Bhalu doesn't like it — we don't ship it.
 
 <div class="grand-total">
 <p>Delivery Charge: ₹69</p>
-
+🚚 Flat delivery charge ₹69 anywhere in Pune
 <p><b>Grand Total: ₹<span id="grand-total">0</span></b></p>
 
 </div>
@@ -403,7 +438,13 @@ If Bhalu doesn't like it — we don't ship it.
 <h3>💳 Pay via UPI</h3>
 
 <div class="upi-box">
+<div class="upi-buttons">
 
+<a id="gpayBtn" class="gpay-btn">Pay with Google Pay</a>
+
+<a id="phonepeBtn" class="phonepe-btn">Pay with PhonePe</a>
+
+</div>
 </div>
 <p class="upi-id"><b>UPI ID:</b> khutale.karan.s-2@okhdfcbank</p>
 
@@ -444,6 +485,9 @@ If Bhalu doesn't like it — we don't ship it.
 const PRICE_PER_DOZEN = 1200;
 const DELIVERY_CHARGE = 69;
 
+const UPI_ID = "khutale.karan.s-2@okhdfcbank";
+const PAYEE_NAME = "AmcheAmbe";
+
 const qtyInput = document.getElementById("alphonso-qty");
 const mangoTotalEl = document.getElementById("mango-total");
 const grandTotalEl = document.getElementById("grand-total");
@@ -467,14 +511,16 @@ grandTotalEl.textContent = grandTotal;
 
 function increaseQty(){
 
-qtyInput.value = parseInt(qtyInput.value || 0) + 1;
+let current = parseInt(qtyInput.value) || 0;
+qtyInput.value = current + 1;
+
 updateTotal();
 
 }
 
 function decreaseQty(){
 
-let current = parseInt(qtyInput.value || 0);
+let current = parseInt(qtyInput.value) || 0;
 
 if(current > 0){
 qtyInput.value = current - 1;
@@ -483,6 +529,9 @@ qtyInput.value = current - 1;
 updateTotal();
 
 }
+
+
+/* WhatsApp order */
 
 document.getElementById("orderForm").addEventListener("submit", function(e){
 
@@ -522,6 +571,34 @@ const whatsappURL = `https://wa.me/8421559339?text=${encodeURIComponent(message)
 window.open(whatsappURL, "_blank");
 
 });
+
+
+/* UPI Payment */
+
+function openPayment(){
+
+let qty = parseInt(qtyInput.value) || 0;
+
+if(qty === 0){
+alert("Please select at least 1 dozen mangoes.");
+return;
+}
+
+let mangoTotal = qty * PRICE_PER_DOZEN;
+let total = mangoTotal + DELIVERY_CHARGE;
+
+let paymentLink =
+`upi://pay?pa=${UPI_ID}&pn=${PAYEE_NAME}&am=${total}&cu=INR`;
+
+window.location.href = paymentLink;
+
+}
+
+const gpayBtn = document.getElementById("gpayBtn");
+const phonepeBtn = document.getElementById("phonepeBtn");
+
+if(gpayBtn) gpayBtn.onclick = openPayment;
+if(phonepeBtn) phonepeBtn.onclick = openPayment;
 
 
 /* Smooth scrolling */
