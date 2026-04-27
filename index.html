@@ -423,7 +423,8 @@ Grand Total: <span id="grand-total">₹0</span>
 
 <script>
 
-const PRICE_PER_DOZEN = 1269;
+const PRICE_PER_DOZEN = 1200;
+const DELIVERY_CHARGE = 69;
 
 const qtyInput = document.getElementById("alphonso-qty");
 const subtotalEl = document.getElementById("alphonso-total");
@@ -432,10 +433,12 @@ const grandTotalEl = document.getElementById("grand-total");
 function updateTotal() {
 
 const qty = parseInt(qtyInput.value) || 0;
-const total = qty * PRICE_PER_DOZEN;
 
-subtotalEl.textContent = "₹" + total;
-grandTotalEl.textContent = "₹" + total;
+const mangoTotal = qty * PRICE_PER_DOZEN;
+const finalTotal = qty > 0 ? mangoTotal + DELIVERY_CHARGE : 0;
+
+subtotalEl.textContent = "₹" + mangoTotal;
+grandTotalEl.textContent = "₹" + finalTotal;
 
 }
 
