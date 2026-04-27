@@ -97,20 +97,39 @@ font-size:1.3rem;
 
 /* BHALU */
 
+#bhalu{
+padding:60px 20px;
+background:#f7f3ea;
+}
+
 .bhalu{
 display:flex;
+flex-direction:column;
 align-items:center;
-gap:40px;
-flex-wrap:wrap;
+text-align:center;
+gap:20px;
 }
 
 .bhalu img{
-display:block;
-margin:0 auto;
+width:350px;
+max-width:100%;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
 
 .bhalu-text{
 max-width:500px;
+}
+
+.bhalu-text h2{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.bhalu-text p{
+font-size:16px;
+line-height:1.6;
+color:#444;
 }
 
 /* FEATURES */
@@ -318,20 +337,15 @@ color:#d35400;
 
 <div class="bhalu">
 
-<img src="bhalu.png">
+<img src="bhalu.png" alt="Bhalu Poster">
 
 <div class="bhalu-text">
 
 <h2>Meet Bhalu 🐻</h2>
 
 <p>
-
-Bhalu is our official mango tester.
-
-Every mango goes through the **Bhalu Approval Test**.
-
-If Bhalu doesn't like it — we don't ship it.
-
+Bhalu is our official mango tester. Every mango goes through the 
+<strong>Bhalu Approval Test</strong>. If Bhalu doesn't like it — we don't ship it.
 </p>
 
 </div>
