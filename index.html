@@ -398,7 +398,7 @@ If Bhalu doesn't like it — we don't ship it.
 
 <p>Mango Total: <span id="alphonso-total">₹0</span></p>
 
-<p>Delivery Charge: ₹<span id="delivery-charge">69</span></p>
+<p>Delivery Charge: ₹69</p>
 
 <p><b>Grand Total: ₹<span id="grand-total">0</span></b></p>
 
@@ -447,29 +447,29 @@ const PRICE_PER_DOZEN = 1200;
 const DELIVERY_CHARGE = 69;
 
 const qtyInput = document.getElementById("alphonso-qty");
-const subtotalEl = document.getElementById("alphonso-total");
+const mangoTotalEl = document.getElementById("alphonso-total");
 const grandTotalEl = document.getElementById("grand-total");
 
-function updateTotal() {
+function updateTotal(){
 
 const qty = parseInt(qtyInput.value) || 0;
 
 const mangoTotal = qty * PRICE_PER_DOZEN;
-const finalTotal = qty > 0 ? mangoTotal + DELIVERY_CHARGE : 0;
+const grandTotal = qty > 0 ? mangoTotal + DELIVERY_CHARGE : 0;
 
-subtotalEl.textContent = "₹" + mangoTotal;
-grandTotalEl.textContent = "₹" + finalTotal;
+mangoTotalEl.textContent = "₹" + mangoTotal;
+grandTotalEl.textContent = grandTotal;
 
 }
 
-function increaseQty() {
+function increaseQty(){
 
 qtyInput.value = parseInt(qtyInput.value || 0) + 1;
 updateTotal();
 
 }
 
-function decreaseQty() {
+function decreaseQty(){
 
 let current = parseInt(qtyInput.value || 0);
 
@@ -495,7 +495,8 @@ alert("Please select at least 1 dozen mangoes.");
 return;
 }
 
-const total = qty * PRICE_PER_DOZEN;
+const mangoTotal = qty * PRICE_PER_DOZEN;
+const total = mangoTotal + DELIVERY_CHARGE;
 
 const message = `Hi, I want to order Amche Ambe by Bhalu 🥭
 
@@ -506,7 +507,10 @@ Address: ${address}
 Order:
 Alphonso: ${qty} dozen
 
-Total: ₹${total}
+Mango Total: ₹${mangoTotal}
+Delivery Charge: ₹${DELIVERY_CHARGE}
+
+Grand Total: ₹${total}
 
 Payment done via UPI`;
 
@@ -515,6 +519,10 @@ const whatsappURL = `https://wa.me/8421559339?text=${encodeURIComponent(message)
 window.open(whatsappURL, "_blank");
 
 });
+
+
+/* Smooth scrolling */
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 anchor.addEventListener("click", function(e){
@@ -531,6 +539,12 @@ behavior: "smooth"
 });
 
 });
+
+
+/* Initialize totals */
+
+updateTotal();
+
 </script>
 
 </body>
