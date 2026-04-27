@@ -492,7 +492,22 @@ const whatsappURL = `https://wa.me/8421559339?text=${encodeURIComponent(message)
 window.open(whatsappURL, "_blank");
 
 });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
+anchor.addEventListener("click", function(e){
+
+e.preventDefault();
+
+const target = document.querySelector(this.getAttribute("href"));
+
+window.scrollTo({
+top: target.offsetTop - 50,
+behavior: "smooth"
+});
+
+});
+
+});
 </script>
 
 </body>
