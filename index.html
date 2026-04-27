@@ -254,6 +254,12 @@ border-radius:10px;
 margin:20px 0;
 }
 
+.payment-note{
+text-align:center;
+margin:15px 0;
+font-size:16px;
+color:#d35400;
+}
 </style>
 
 </head>
@@ -376,7 +382,7 @@ If Bhalu doesn't like it — we don't ship it.
 <h3>🥭 Select Quantities (in dozens)</h3>
 
 <div class="qty-row">
-<span>Alphonso ₹1269/doz</span>
+<span>Alphonso ₹1200/doz</span>
 
 <div class="qty-controls">
 <button type="button" onclick="decreaseQty()">-</button>
@@ -389,7 +395,13 @@ If Bhalu doesn't like it — we don't ship it.
 </div>
 
 <div class="grand-total">
-Grand Total: <span id="grand-total">₹0</span>
+
+<p>Mango Total: <span id="alphonso-total">₹0</span></p>
+
+<p>Delivery Charge: ₹<span id="delivery-charge">69</span></p>
+
+<p><b>Grand Total: ₹<span id="grand-total">0</span></b></p>
+
 </div>
 
 <h3>💳 Pay via UPI</h3>
@@ -400,11 +412,19 @@ Grand Total: <span id="grand-total">₹0</span>
 
 <div>
 <p><b>UPI ID:</b> khutale.karan.s-2@okhdfcbank</p>
-<p>Scan & pay then submit order.</p>
 </div>
 
 </div>
 
+<p class="payment-note">
+⚠️ <b>Scan & Pay First, Then Click Submit Order</b>
+</p>
+
+<p class="payment-note">
+📸 <b>Send payment screenshot on WhatsApp after ordering</b>
+</p>
+
+<button type="submit" class="btn">Submit Order via WhatsApp</button>
 <button type="submit" class="btn">Submit Order via WhatsApp</button>
 
 </form>
