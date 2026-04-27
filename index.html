@@ -393,9 +393,6 @@ If Bhalu doesn't like it — we don't ship it.
 </div>
 
 <div class="grand-total">
-
-<p>Mango Total: <span id="alphonso-total">₹0</span></p>
-
 <p>Delivery Charge: ₹69</p>
 
 <p><b>Grand Total: ₹<span id="grand-total">0</span></b></p>
@@ -423,7 +420,6 @@ If Bhalu doesn't like it — we don't ship it.
 </p>
 
 <button type="submit" class="btn">Submit Order via WhatsApp</button>
-<button type="submit" class="btn">Submit Order via WhatsApp</button>
 
 </form>
 
@@ -445,7 +441,7 @@ const PRICE_PER_DOZEN = 1200;
 const DELIVERY_CHARGE = 69;
 
 const qtyInput = document.getElementById("alphonso-qty");
-const mangoTotalEl = document.getElementById("alphonso-total");
+const mangoTotalEl = document.getElementById("mango-total");
 const grandTotalEl = document.getElementById("grand-total");
 
 function updateTotal(){
