@@ -389,8 +389,6 @@ If Bhalu doesn't like it — we don't ship it.
 <input type="number" id="alphonso-qty" value="0" readonly>
 <button type="button" onclick="increaseQty()">+</button>
 </div>
- 
-<span id="alphonso-total">₹0</span>
 
 </div>
 
@@ -457,8 +455,13 @@ const qty = parseInt(qtyInput.value) || 0;
 const mangoTotal = qty * PRICE_PER_DOZEN;
 const grandTotal = qty > 0 ? mangoTotal + DELIVERY_CHARGE : 0;
 
+if(mangoTotalEl){
 mangoTotalEl.textContent = "₹" + mangoTotal;
+}
+
+if(grandTotalEl){
 grandTotalEl.textContent = grandTotal;
+}
 
 }
 
