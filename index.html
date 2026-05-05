@@ -533,7 +533,7 @@ Bhalu is our official mango tester. Every mango goes through the
 <p style="font-size:14px;color:#666;">
 Outside Pune delivery charges applicable
 </p>
-<p>Mango Total: <span id="mango-total">0</span></p>
+<p>Mango Total: ₹<span id="mango-total">0</span></p>
 <p><b>Grand Total: ₹<span id="grand-total">0</span></b></p>
  
 <h3>💳 Pay via GPay/PhonePe on this number <b>+91 97663 63722</b></h3>
@@ -583,7 +583,7 @@ const mangoTotal = qty * PRICE_PER_DOZEN;
 const grandTotal = mangoTotal; // delivery is free
 
 if(mangoTotalEl){
-mangoTotalEl.textContent = "₹" + mangoTotal;
+mangoTotalEl.textContent = mangoTotal;
 }
 
 if(grandTotalEl){
