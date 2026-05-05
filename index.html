@@ -567,8 +567,8 @@ Bhalu is our official mango tester. Every mango goes through the
 
 <script>
 
-const PRICE_PER_DOZEN = 1200;
-const DELIVERY_CHARGE = 69;
+const PRICE_PER_DOZEN = 900;
+const DELIVERY_CHARGE = 0;
 
 const qtyInput = document.getElementById("alphonso-qty");
 const mangoTotalEl = document.getElementById("mango-total");
@@ -579,7 +579,7 @@ function updateTotal(){
 const qty = parseInt(qtyInput.value) || 0;
 
 const mangoTotal = qty * PRICE_PER_DOZEN;
-const grandTotal = qty > 0 ? mangoTotal + DELIVERY_CHARGE : 0;
+const grandTotal = mangoTotal; // delivery is free
 
 if(mangoTotalEl){
 mangoTotalEl.textContent = "₹" + mangoTotal;
@@ -642,9 +642,11 @@ Order:
 Alphonso: ${qty} dozen
 
 Mango Total: ₹${mangoTotal}
-Delivery Charge: ₹${DELIVERY_CHARGE}
+Delivery: Free in Pune
 
 Grand Total: ₹${total}
+
+Note: Outside Pune delivery charges applicable
 
 Payment done via UPI`;
 
